@@ -2,10 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Makes site mobile-friendly -->
+  <title>Jake Bennett Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Hero section with full-width background and overlay -->
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Jake Bennett</h1>
+      <p class="hero-tagline">Transforming Ideas into Digital Realities</p>
+    </div>
+  </header>
+  <!-- Fixed, centered, responsive navigation bar -->
+  <nav id="main-nav" class="toolbar-box">
+    <div class="nav-container">
+      <div class="nav-logo">JB</div>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-menu">
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#about" onclick="showSection('about')">About Me</a></li>
+        <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+        <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Home Section -->
+  <section id="home" class="section-home">
+    <div class="home-content">
+      <!-- Carousel below hero -->
+      <div class="carousel-box">
+        <!-- The text below will change every 10 seconds using JavaScript -->
+        <div id="carousel-text">Welcome to my site!</div>
+      </div>
+      <!-- Professional photo on Home page -->
+      <img src="img/Professional Me.jpeg" alt="My Professional photo" class="about-photo" />
+      <h2>Skills</h2>
+      <div class="badges">
+        <span class="badge badge-html">
+          <img src="img/HTML.png" alt="HTML Logo" class="badge-logo" />
+          HTML
+        </span>
+        <span class="badge badge-css">
+          <img src="img/CSS.png" alt="CSS Logo" class="badge-logo" />
+          CSS
+        </span>
+        <span class="badge badge-js">
+          <img src="img/JavaScript-Logo.png" alt="JavaScript Logo" class="badge-logo" />
+          JavaScript
+        </span>
+        <span class="badge badge-python">
+          <img src="img/Python-Symbol.png" alt="Python Logo" class="badge-logo" />
+          Python
+        </span>
+        <span class="badge badge-secplus">
+          <img src="img/Sec+.png" alt="CompTIA Security+ Logo" class="badge-logo" />
+          CompTIA SEC+
+        </span>
+      </div>
+      <!-- Featured Project Card -->
+      <div class="featured-project">
+        <h2>Featured Project</h2>
+        <div class="project-card" id="featured-project-card">
+          <!-- Project info will be filled by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Me Section -->
+  <section id="about" class="section-dark fade-in" style="display:none;">
+    <h2>About Me</h2>
+    <img src="img/Professional Me.jpeg" alt="Professional photo of Jake Bennett" class="about-photo" />
+    <p>Hello, I’m Jake from Eagle, ID! I’m currently pursuing a degree in Cybersecurity with a minor in Japanese Studies and Military Science at Boise State University. I have experience in Python, JavaScript, HTML, and CSS, and I’m passionate about applying these skills in both cybersecurity and software development.</p>
+    <p>I have also served in the Idaho Army National Guard under multiple roles.</p>
+    <p>I have experience as a cyber defense intern through Boise State University's Cyberdome project.</p>
+    <p>My career interests include Information & Cyber Security, Full Stack Development, and Web and Software Architecture. While cybersecurity is my primary passion, I’m equally excited about opportunities in software engineering and development.</p>
+    <p>I also enjoy exploring the intersection of technology, culture, and language—and when I’m not working on tech projects, you’ll probably find me outdoors or learning more about the UAS (Unmanned Aerial Systems) industry.</p>
+  </section>
+  <!-- Projects Section as modular cards -->
+  <section id="projects" class="section-dark" style="display:none;">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <div class="project-card">
+        <h3>Profile Card (HTML)</h3>
+        <p>A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design.</p>
+        <a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" class="btn-primary">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Pet Fostering Call-to-Action</h3>
+        <p>A call-to-action web page for pet fostering, designed to encourage community involvement.</p>
+        <a href="https://jebennett204.github.io/01-pet-fostering-cta/" target="_blank" class="btn-primary">View Project</a>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section-light" style="display:none;">
+    <h2>Contact</h2>
+    <p>Email: jakebennett@u.boisestate.edu</p>
+    <div class="profile-buttons">
+      <a href="https://www.linkedin.com/in/jakebennett204/" target="_blank">
+        <img src="img/linkedin.webp" alt="LinkedIn Logo" class="profile-logo" />
+      </a>
+      <a href="https://github.com/jebennett204" target="_blank">
+        <img src="img/github.png" alt="GitHub Logo" class="profile-logo" />
+      </a>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com/in/jakebennett204/" target="_blank">
+        <img src="img/linkedin.webp" alt="LinkedIn Logo" class="profile-logo" />
+      </a>
+      <a href="https://github.com/jebennett204" target="_blank">
+        <img src="img/github.png" alt="GitHub Logo" class="profile-logo" />
+      </a>
+    </div>
+    <p>&copy; 2025 Jake Bennett</p>
+  </footer>
+  <!-- Simple JavaScript for tab navigation and carousel -->
+  <script>
+    // Show only the selected section, hide others
+    function showSection(sectionId) {
+      var sections = document.querySelectorAll('section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = 'none';
+      }
+      document.getElementById(sectionId).style.display = 'block';
+      // If home is shown, randomize the featured project
+      if (sectionId === 'home') {
+        showRandomFeaturedProject();
+      }
+    }
+    // Simple beginner-friendly carousel for the home page
+    var carouselItems = [
+      "Welcome to my site!",
+      "Exploring the World of Web Development",
+      "Crafting Seamless Web Experiences",
+      "Innovative Designs, Robust Code",
+      "Your Vision, Brought to Life Online",
+      "Building Responsive and Engaging Websites",
+      "Elevating Brands Through Web Development",
+      "From Concept to Launch: Web Solutions That Work",
+      "Designing with Purpose, Developing with Precision",
+      "User-Centric Designs for Maximum Impact",
+      "Scalable Solutions for Growing Businesses",
+      "Where Creativity Meets Functionality",
+      "Tailored Web Solutions for Unique Needs",
+      "Bridging Aesthetics and Performance",
+      "Innovative Web Development for Modern Challenges",
+      "Empowering Businesses Through Technology"
+    ];
+    var carouselIndex = 1; // Start at 1 so the first is always 'Welcome to my site!'
+    function updateCarousel() {
+      var carouselText = document.getElementById('carousel-text');
+      if (carouselText) {
+        // Fade out
+        carouselText.style.opacity = 0;
+        setTimeout(function() {
+          // Always show 'Welcome to my site!' first, then cycle the rest
+          if (carouselIndex === 0) {
+            carouselText.textContent = carouselItems[0];
+          } else {
+            carouselText.textContent = carouselItems[carouselIndex];
+          }
+          carouselText.style.opacity = 1;
+          carouselIndex = (carouselIndex + 1) % carouselItems.length;
+          if (carouselIndex === 0) carouselIndex = 1; // Skip 0 after first
+        }, 1000); // 1s fade out, then change
+      }
+    }
+    // Show the first item right away
+    document.getElementById('carousel-text').textContent = carouselItems[0];
+    setInterval(updateCarousel, 10000); // Change every 10 seconds
+
+    // List of projects for the Projects section and for random featured project
+    var projects = [
+      {
+        title: "Profile Card (HTML)",
+        url: "https://jebennett204.github.io/01-profile-card-html/",
+        description: "A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design."
+      },
+      {
+        title: "Pet Fostering Call-to-Action",
+        url: "https://jebennett204.github.io/01-pet-fostering-cta/",
+        description: "A call-to-action web page for pet fostering, designed to encourage community involvement."
+      }
+    ];
+
+    // Show a random project in the Featured Project card
+    function showRandomFeaturedProject() {
+      var card = document.getElementById('featured-project-card');
+      // Always randomize the project every time the function is called
+      var randomIndex = Math.floor(Math.random() * projects.length);
+      var project = projects[randomIndex];
+      card.innerHTML =
+        '<h3>' + project.title + '</h3>' +
+        '<p>' + project.description + '</p>' +
+        '<a href="' + project.url + '" target="_blank" class="btn-primary">View Project</a>';
+    }
+
+    // Mobile hamburger toggle
+    var toggle = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', function() {
+      menu.classList.toggle('open');
+    });
+
+    // Show home section by default on page load
+    showSection('home');
+  </script>
 </body>
 </html>
