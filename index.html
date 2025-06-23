@@ -84,30 +84,41 @@
   <section id="projects" class="section-dark" style="display:none;">
     <h2>Projects</h2>
     <div class="projects-list">
+      <!-- Water Quest Game Project Card (newest) -->
       <div class="project-card">
-        <h3>Profile Card (HTML)</h3>
-        <p>A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design.</p>
-        <a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" class="btn-primary">View Project</a>
+        <h3>Water Quest Game</h3>
+        <p>
+          A browser-based game called Water Quest. It is a whack-a-mole-style experience themed around clean water access and inspired by charity: water.
+        </p>
+        <a href="https://jebennett204.github.io/05-cw-game-water-quest/" class="btn-primary" target="_blank">
+          View Project
+        </a>
       </div>
+      
+      <!-- Intel's Sustainability Journey Project Card -->
+      <div class="project-card">
+        <h3>Intel's Sustainability Journey &amp; Website Localization</h3>
+        <p>
+          A continuation of my sustainability-themed work with Intel through the Global Career Accelerator, this project focuses on adding localization and right-to-left language support for global audiences using Bootstrap, semantic HTML, and accessibility best practices.
+        </p>
+        <a href="https://jebennett204.github.io/03-prj-intel-website-localization/" class="btn-primary" target="_blank">
+          View Project
+        </a>
+      </div>
+      
+      <!-- Pet Fostering Project Card -->
       <div class="project-card">
         <h3>Pet Fostering Call-to-Action</h3>
         <p>A call-to-action web page for pet fostering, designed to encourage community involvement.</p>
         <a href="https://jebennett204.github.io/01-pet-fostering-cta/" target="_blank" class="btn-primary">View Project</a>
       </div>
-      <!-- New Project Card: Intel’s Sustainability Journey & Website Localization -->
+      
+      <!-- Profile Card Project (oldest) -->
       <div class="project-card">
-        <!-- Project title -->
-        <h3>Intel’s Sustainability Journey &amp; Website Localization</h3>
-        <!-- Project description -->
-        <p>
-          A continuation of my sustainability-themed work with Intel through the Global Career Accelerator, this project focuses on adding localization and right-to-left language support for global audiences using Bootstrap, semantic HTML, and accessibility best practices.
-        </p>
-        <!-- Project link button -->
-        <a href="https://jebennett204.github.io/03-prj-intel-website-localization/" class="btn-primary" target="_blank">
-          View Project
-        </a>
+        <h3>Profile Card (HTML)</h3>
+        <p>A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design.</p>
+        <a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" class="btn-primary">View Project</a>
       </div>
-      <!-- End of new project card -->
     </div>
   </section>
   <!-- Contact Section -->
@@ -191,11 +202,17 @@
     setInterval(updateCarousel, 10000); // Change every 10 seconds
 
     // List of projects for the Projects section and for random featured project
+    // Sorted from newest to oldest
     var projects = [
       {
-        title: "Profile Card (HTML)",
-        url: "https://jebennett204.github.io/01-profile-card-html/",
-        description: "A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design."
+        title: "Water Quest Game",
+        url: "https://jebennett204.github.io/05-cw-game-water-quest/",
+        description: "A browser-based game called Water Quest. It is a whack-a-mole-style experience themed around clean water access and inspired by charity: water."
+      },
+      {
+        title: "Intel's Sustainability Journey & Website Localization",
+        url: "https://jebennett204.github.io/03-prj-intel-website-localization/",
+        description: "A continuation of my sustainability-themed work with Intel, this project focuses on adding localization and right-to-left language support for global audiences using Bootstrap, semantic HTML, and accessibility best practices."
       },
       {
         title: "Pet Fostering Call-to-Action",
@@ -203,9 +220,9 @@
         description: "A call-to-action web page for pet fostering, designed to encourage community involvement."
       },
       {
-        title: "Intel’s Sustainability Journey & Website Localization",
-        url: "https://jebennett204.github.io/03-prj-intel-website-localization/",
-        description: "A continuation of my sustainability-themed work with Intel, this project focuses on adding localization and right-to-left language support for global audiences using Bootstrap, semantic HTML, and accessibility best practices."
+        title: "Profile Card (HTML)",
+        url: "https://jebennett204.github.io/01-profile-card-html/",
+        description: "A simple, responsive profile card built with HTML and CSS. Showcases clean layout and modern design."
       }
     ];
 
@@ -229,6 +246,10 @@
     });
 
     // Show home section by default on page load
+    showSection('home');
+  </script>
+</body>
+</html>
     showSection('home');
   </script>
 </body>
