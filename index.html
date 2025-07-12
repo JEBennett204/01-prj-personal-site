@@ -84,13 +84,25 @@
   <section id="projects" class="section-dark" style="display:none;">
     <h2>Projects</h2>
     <div class="projects-list">
-      <!-- Water Quest Game Project Card (newest) -->
+      <!-- NASA Space Explorer Project Card (newest) -->
+      <div class="project-card">
+        <!-- Project title -->
+        <h3>NASA Space Explorer</h3>
+        <!-- Project description -->
+        <p>
+          Explore space with this interactive project. NASA Space Explorer lets users discover planets, missions, and more using real NASA data.
+        </p>
+        <!-- Project link button -->
+        <a href="https://jebennett204.github.io/07-nasa-space-explorer/" class="btn-primary" target="_blank">
+          View Project
+        </a>
+      </div>
+      <!-- Water Quest Game Project Card -->
       <div class="project-card">
         <h3>Water Quest Game</h3>
         <p>
           A browser-based game called Water Quest. It is a whack-a-mole-style experience themed around clean water access and inspired by charity: water.
         </p>
-        <!-- Updated project link below -->
         <a href="https://jebennett204.github.io/06-completed-water-quest/" class="btn-primary" target="_blank">
           View Project
         </a>
@@ -206,6 +218,11 @@
     // Sorted from newest to oldest
     var projects = [
       {
+        title: "NASA Space Explorer",
+        url: "https://jebennett204.github.io/07-nasa-space-explorer/",
+        description: "Explore space with this interactive project. NASA Space Explorer lets users discover NASA imagery, videos, and more on specific date ranges using a real NASA API."
+      },
+      {
         title: "Water Quest Game",
         url: "https://jebennett204.github.io/06-completed-water-quest/",
         description: "A browser-based game called Water Quest. It is a whack-a-mole-style experience themed around clean water access and inspired by charity: water."
@@ -251,6 +268,7 @@
   </script>
 </body>
 </html>
+    showSection('home');
   </script>
 </body>
 </html>
