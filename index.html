@@ -84,15 +84,35 @@
   <section id="projects" class="section-dark" style="display:none;">
     <h2>Projects</h2>
     <div class="projects-list">
-      <!-- NASA Space Explorer Project Card (newest) -->
+      <!-- L'Oréal Routine Builder Project Card (newest) -->
       <div class="project-card">
         <!-- Project title -->
-        <h3>NASA Space Explorer</h3>
+        <h3>L'Oréal Routine Builder</h3>
         <!-- Project description -->
+        <p>
+          A simple web app for L'Oréal that helps users build their own skincare routine step-by-step in a friendly way.
+        </p>
+        <!-- Project link button -->
+        <a href="https://jebennett204.github.io/09-prj-loreal-routine-builder/" class="btn-primary" target="_blank">
+          View Project
+        </a>
+      </div>
+      <!-- L'Oréal Chat Bot Project Card -->
+      <div class="project-card">
+        <h3>L'Oréal Chat Bot</h3>
+        <p>
+          An interactive chat bot project for L'Oréal. This bot helps users learn about products and get answers in a friendly, conversational way.
+        </p>
+        <a href="https://jebennett204.github.io/08-prj-loreal-chatbot/" class="btn-primary" target="_blank">
+          View Project
+        </a>
+      </div>
+      <!-- NASA Space Explorer Project Card -->
+      <div class="project-card">
+        <h3>NASA Space Explorer</h3>
         <p>
           Explore space with this interactive project. NASA Space Explorer lets users discover planets, missions, and more using real NASA data.
         </p>
-        <!-- Project link button -->
         <a href="https://jebennett204.github.io/07-nasa-space-explorer/" class="btn-primary" target="_blank">
           View Project
         </a>
@@ -218,6 +238,16 @@
     // Sorted from newest to oldest
     var projects = [
       {
+        title: "L'Oréal Routine Builder",
+        url: "https://jebennett204.github.io/09-prj-loreal-routine-builder/",
+        description: "A simple web app for L'Oréal that helps users build their own skincare routine step-by-step in a friendly way."
+      },
+      {
+        title: "L'Oréal Chat Bot",
+        url: "https://jebennett204.github.io/08-prj-loreal-chatbot/",
+        description: "An interactive chat bot project for L'Oréal. This bot helps users learn about products and get answers in a friendly, conversational way."
+      },
+      {
         title: "NASA Space Explorer",
         url: "https://jebennett204.github.io/07-nasa-space-explorer/",
         description: "Explore space with this interactive project. NASA Space Explorer lets users discover NASA imagery, videos, and more on specific date ranges using a real NASA API."
@@ -247,9 +277,11 @@
     // Show a random project in the Featured Project card
     function showRandomFeaturedProject() {
       var card = document.getElementById('featured-project-card');
-      // Always randomize the project every time the function is called
+      if (!card) return; // Make sure the card exists
+      // Pick a random project from the array
       var randomIndex = Math.floor(Math.random() * projects.length);
       var project = projects[randomIndex];
+      // Fill the card with project info
       card.innerHTML =
         '<h3>' + project.title + '</h3>' +
         '<p>' + project.description + '</p>' +
@@ -264,11 +296,10 @@
     });
 
     // Show home section by default on page load
-    showSection('home');
-  </script>
-</body>
-</html>
-    showSection('home');
+    window.onload = function() {
+      showSection('home');
+      showRandomFeaturedProject(); // Ensure featured project is shown on load
+    };
   </script>
 </body>
 </html>
